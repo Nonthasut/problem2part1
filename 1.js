@@ -1,8 +1,16 @@
-let result = [2, 3, 5, 7];
-for (i = 2; i <= 100; i++) {
-    if (i % 2 != 0 && i % 3 != 0 && i % 5 != 0 && i % 7 != 0) {
-        result.push(i)
-    } else {
-        continue;
+let result = []
+let check = []
+for (i = 2; i <= 500; i++) {
+    for (j = 0; j <= 100; j++) {
+        if (i % j == 0) {
+            check.push(i)
+        }
+    }
+    if(check.length>2){
+    check=[]
+    continue
+    }else if(check.length===2){
+    result.push(i)
+    check=[]
     }
 } alert(result)
