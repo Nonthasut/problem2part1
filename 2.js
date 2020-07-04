@@ -1,22 +1,17 @@
-let n = prompt("Add n")
-let result = [2, 3, 5, 7];
+let n = +prompt('Add n')
+let result = []
+let checker =0
 for (i = 2; i <= n; i++) {
-    if (n <= 2) {
-        result = [2]
-        break;
+    for(j=0;j<=n;j++){
+    if(i%j==0){
+        checker++
     }
-    else if (n <= 3) {
-        result = [2, 3]
-        break;
     }
-    else if (n <= 5) {
-        result = [2, 3, 5]
-        break;
-    }
-    else if (n > 10 && i % 2 != 0 && i % 3 != 0 && i % 5 != 0 && i % 7 != 0) {
-
+    if(checker<3){
         result.push(i)
-    } else {
-        continue;
+        checker=0
+    }else if(checker>2){
+        checker=0
     }
+    
 } alert(result)
