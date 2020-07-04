@@ -1,28 +1,17 @@
-let n = Number(prompt("Add n"))
-let result = [2, 3, 5, 7];
-for (i = 0; i <= Infinity; i++) {
-    if (n == 1) {
-        result = [2]
-        break;
+let n = +prompt('Add n')
+let result = []
+let checker =0
+for (i = 2; i<=n*100; i++) {
+    for(j=0;j<=n*100;j++){
+    if(i%j==0){
+        checker++
     }
-    else if (n == 2) {
-        result = [2, 3]
-        break;
     }
-    else if (n == 3) {
-        result = [2, 3, 5]
-        break;
-    }  else if (n == 4) {
-        break;
+    if(checker<3){
+        result.push(i)
+        checker=0
+    }else if(checker>2){
+        checker=0
     }
-    else if (n > 4&&i!=1 && i % 2 != 0 && i % 3 != 0 && i % 5 != 0 && i % 7 != 0 ) {
-        if (result.length != n) {
-            result.push(i)
-        }else if(result.length=n){
-            break
-        }
-
-    } else {
-        continue;
-    }
-} alert(result)
+    
+} alert(result.slice(0,n))
