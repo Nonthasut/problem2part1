@@ -1,4 +1,5 @@
 function GCD(number) {
+    let collectData=[]
     let prove = []
     let answer = []
 
@@ -15,6 +16,7 @@ function GCD(number) {
             prove.push(collectData[k][1])
         }
     }
+    
     prove.sort((a, b) => { return a - b })
 
     for (m = 0; m <= prove.length - 1; m++) {
