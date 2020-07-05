@@ -1,5 +1,4 @@
 function GCD(number) {
-    let collectData = []
     let prove = []
     let answer = []
 
